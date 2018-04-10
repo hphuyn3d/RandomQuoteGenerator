@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { QuoteBoxComponent } from './quote-box/quote-box.component';
+import { QuoteBoxComponent } from '../quote-box/quote-box.component';
+import { QuoteService } from '../services/quote.service';
 
 
 @NgModule({
@@ -12,9 +14,10 @@ import { QuoteBoxComponent } from './quote-box/quote-box.component';
     QuoteBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
